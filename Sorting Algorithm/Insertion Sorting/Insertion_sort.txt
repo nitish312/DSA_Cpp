@@ -1,0 +1,15 @@
+Insertion Short Algorithm -
+Theory -
+->  Insertion Short is a simple Algorithm that works the way we sort playing cards in our hands.
+->  Insertion Short is a simple sorting algorithm that builds the finel shorted array (or List) one item at a time.
+->  Efficient for(quite) small data sets, much like other quadratic shorting algorithms.
+->  More efficient in practice than most of other simple quadratic(i.e.:O(n^2)) sorting algorithm such as selection short or bubble short.
+->  Time Complexity : O(n^2)
+
+Insertion Short Algorithm :-
+
+1> pick next elemnt
+2> Compare wwith all element in the shorted sub-list on the left.
+3> Shift all the elements in the shorted sub-list that is greater than the value to be shorted
+4> Insert the value
+5> Represent until list is shorted

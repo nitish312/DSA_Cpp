@@ -1,0 +1,62 @@
+Merage Sort Algorithm :
+Theory :
+-> Merge Short is a divide and conquer algorithm.
+-> It divides input array in two halves, call itself for the two halves(recursively) and then merges the two sorted halves.
+-> A seperate merge() function is used for merging two halves.
+-> Merge sort is one of the most efficient sorting algorithms.
+-> Time Complexity : O(nlog(n))
+
+Working :
+
+mergeShort(arr[],l,r) [l = left most index, r = roght most indes]
+{
+    Dividion
+    1> Find the middle point to divide the array into two halves:
+        middle m = (l+r)/2
+    
+    Recursion
+    2> Call mergeSort for first half :
+        mergeSort(arr,l,m)
+    3> Call mergeShort for second half:
+        mergeShort(arr,m+1,r)
+
+    merging
+    4> Merge the two halves sorted in 2> and 3> :
+        merge(arr,l,m,r)
+}
+
+
+Algorithm :
+
+merge(arr,l,m,r)
+{
+    1> i=l, j=m+1, k=1
+    2> temp[]
+    3> while(i<m && j<=r)
+        3.1> if(arr[i]<=arr[j])
+             temp[k] = arr[i]
+             i++,k++
+        3.2> else
+             temp[k] = arr[j]
+             j++,k++
+    4> while(i<=m)
+       temp[k] = arr[i]
+       i++,k++
+    5> while(j<=r)
+       temp[k] = arr[j]
+       j++,k++
+    6> for(int p=l; p<=r; p++)
+       arr[p] = temp[p];
+       
+}
+
+mereg_short(arr[],l,r)
+{
+    if(l<r)
+    {
+        1> m = (l+r)/2
+        2> mereg_short(arr, l, m)
+        3> mereg_short(arr, m+1, r)
+        4> merege(arr,l,m,r)
+    }
+}

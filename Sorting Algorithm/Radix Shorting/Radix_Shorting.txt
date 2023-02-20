@@ -1,0 +1,57 @@
+Radix Sort Algorithm :
+
+->Radix sort is a non-comparative sorting algorithm.
+->It avoids comparison by creating and distributing elemnets into buckets according to their radix.
+->For elements with more than one significant digit, this bucketing process is repreated for each digit, while preserving the ordering of the prior step, until all digit have been considered. For this reason, radix sort has also been called bucket sort and digital sort.
+->Typically Radix sort users counting sort as a subroutine to sort.
+->Radix sort has linear time complexity which is better than o(nlog n) of comparatively sorting algorithms.
+
+-> Time complexity : Od(n+k)
+-> Space complexity: O(n+k)
+
+Working :
+
+1> Taking input array & find the MX nubers in the array
+2> Define 10 Queues each representing a bucket for each digit from 0-9
+3> Consider the least significant digit of each number in the list which is to be sorted.
+4> Insert each number into their respective queue based on the least significant digit.
+5> Group all the numbers from queue 0 to queue 9 in the order they have inserted into their respective queues.
+6> Repeat from step 3 based on the next least significant digit.
+7> Repeat from step 2 until all the numbers are grouped based on the most significant digit.
+
+Algorithm :
+
+RadixSort(arr,size)
+{
+    1> take arr[size]
+    2> get max from the arr
+        2.1 m = GetMax(arr,size)
+    3> Do counting sort for every digit.
+        3.1 for(int div=1;m/div>0;div*=10)
+            3.1.1 countingSort(arr,size,div)
+}
+
+GetMax(arr,size)
+{
+    1> max=arr[0]
+    2> for(int i=1;i<size;i++)
+        2.1 if(arr[i]>max)
+            2.1.1 max = arr[i]
+    3>return max
+}
+
+CountingSort(arr,size,div)
+{
+    1> create output[size]
+    2> take range(or no of unique elements)
+    3> for(int i=0 to i<range)
+        3.1 count[i] = 0
+    4> for(int i=0 to i<size)
+        4.1 count[(arr[i]/div)%10]++
+    5>  for(int i=1 tp i<range)
+        5.1 count[i] = count[i]+count[i+1]
+    6> for(int i=size-1 to i>=0)
+        6.1 output[cout[(arr[i]/div)%10]-1] = arr[i]
+    7> for(i=0 to i<size)
+        7.1 arr[i] = output[i]
+}

@@ -1,0 +1,48 @@
+Heap Sort Sorting Algorithm :
+    Heap sort is a comparison based sorting technique based on Binary Heap data structure.
+    It is similar to selection sort where we first find the minimum element & place the minimum element at the beginning.
+    We repeat the same process for the remaining elemnts.
+
+Steps in Heap Sort(MIN-HEAP) :
+1> Take size & values of unsorted array from users.
+2> Hepify the array
+3> Call ExtractMin operation to featch the root of Min-Heap.
+    Heapify the remaining array again.
+4> Repeat step 3 till all values extracted.
+
+Working :
+
+1. Take size & input from user : size = 5, harr[5]={7,4,3,9,8}
+2. Heapify the array : harr[]={3,4,7,9,8}
+3. Call ExtractMin() : returns-3
+    Heapify the array: harr[]-{4,8,7,9}
+    Call ExtractMin(): return 4
+    Hepify the array : harr[]-{7,8,9}
+    Call ExtractMin(): return-7
+    Heapify the array: harr[]-{8,9}
+    Call ExtractMin(): return-8
+    Heapify the array: harr[]-{9}
+    Call ExtractMin(): return-9
+
+
+Algorithm :
+
+void heapSort()
+{
+    1.int temp[capacity]
+    2.for(j=0 to j<capacity)
+        {
+            1.1 temp[j] = ExtractMin()
+            1.2 print(temp[j])
+        }
+}
+
+int main()
+{
+    1. MinHeap obj(s)               //size of heap array
+    2. obj.getUnsortedArray()       //get input array from users
+    3. obj.printArray()             //print the unsorted array
+    4. for(int i=s/2-1;i>=0;i--)    //heapify all nodes from bottom to top
+        4.1 obj.MinHeapify(i)
+    5. obj.heapSort()               //perform heapsort & print sorted array
+}

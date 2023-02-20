@@ -1,0 +1,9 @@
+Binary Search algorithm :
+1. Take input : array,left,right and x
+2. Start Loop : While(left<=right)
+    2.1 mid = left + (right-left)/2
+    2.2 if(array[mid]==x) then return mid
+    2.3 else if(arr[mid]<x) then left = mid + 1
+    2.4 else right = mid-1
+3.End Loop
+4. Return -1

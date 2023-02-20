@@ -1,0 +1,57 @@
+Quick Short Algorithm :
+
+-> Quick sort is a divide and conquer algorithm.
+-> It picks an element as pivot and partitions the given array around the picked pivot.
+-> There are many diffenet versions of quickSort that pick pivot in different ways.
+    1.Always pick first element as pivot.
+    2.Always pick last element as pivot.
+    3.Pick a random element as pivot.
+->Quick sort is considered as in in-place sort algorithm.
+    It reduces the space complexity and removes the use of the auxiliary array that is used in merge sort.
+->Quick sort is one of the most effeicient sorting algorithms.
+
+-> Time complexity : Tita(n log(n))
+-> Space complexity : O(log(n))
+
+
+Quick Short Algorithm (Working) :
+
+quickSort(arr[],s,e)        // s->start index,e -> end index
+{
+    // Division
+    Step1: Find partition index(till start index<end index)
+    
+    //Recursion
+    Step2: Call quickSort for the first half:
+        quickSort(arr[],s,p-1)
+    Step3: Call quickSort for second half:
+        quickSort(arr[],p+1,e)
+}
+
+Algorithm :
+
+quickSort(arr[],s,e)
+{
+    if(s<e)
+    {
+        p = Partition(arr[],s,e)
+        quickSort(arr[],s,(p-1))
+        quickSort(arr[],(p+1),e)
+    }
+}
+
+partition(arr[],s,e)
+{
+    pivot = arr[e]
+    pIndex = s
+    for(i=s to e)
+    {
+        if(arr[i]<=pivot)
+        {
+            swap(arr[i],arr[pIndex])
+            pIndex++
+        }
+    }
+    swap(arr[e], arr[pIndex])
+    return pIndex
+}

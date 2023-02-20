@@ -1,0 +1,134 @@
+                    HEAP DATA STRUCTURE
+
+Defination :
+A heap is a special Tree-based data structure in which the tree is a complete binary tree.
+
+It follows the Heap Property :
+
+1> Max-Heap : In a max-heap the key present at the root node must be greater among the keys present at all of its children.The samne property must be recursively true for all sub-trees in that Binary Tree.
+2> Min-Heap : In a min-heap the key present at the root node must be minimum mong the keys presnet at all of it's children. The same property must be recursively true for all sub-trees in that Binary Tree.
+
+
+Application :
+
+1> Heapsort sorting algorithm.
+2> Graph algorithm like - Prim's minimal-spanning-tree algorithm & Dijkstra's shortest-path algorithm.
+3> A priority queue can be implemented with a heap or a variety o other methods.
+
+
+Operations using HEAP DATA STRUCTURE :
+
+getMini() : It returns the root element of min heap. 
+            Time Complexcity : O(1)
+
+getMax() : It returns the root element of max heap. 
+            Time Complexcity : O(1)
+
+extractMin() : Removes the minimum elemnt from MinHeap.
+                Time Complexcity : O(log n) 
+                as the operation needs to maintain the heap property (by calling hepify()) after removing root.
+
+insert() : Inserting a new key takes O(log n) time. We add a new key at the end of the tree.
+            If new key is greater than its parent, Then we don't need to do anything.
+            Otherwise, we need to traverse up to fix the violated heap property.
+
+delete() : deleting a key also takes O(log n) time. We replace the key to be deleted with minimum infinite by calling decreaseKey(). After decreaseKey(), the minus infinity value must reach root,so we call extractMin() to remove the key.
+hepify() : Heapify is the process of creating a heap data structure from a binary tree. It is used to create a Min-Heap or a MAx-Heap.
+
+
+Algorithm :
+
+class MinHeap()
+{
+    int *hrr                            // pointer to array of elemnts in heap
+    int capacity                        // maximum possible size of min heap
+    int heap_size                       // Current number of elemnts in min heap
+
+    MinHeap(int cap)                    //Parameterized constructor
+    int parent(int i)                   //gets parent node
+    int left(int i)                     //get left node
+    int right(int i)                    //get right node
+    int getMin()                        //get minimum value(root node)
+    int extractMin()                    //Gets and removes minimum values(root node)
+    void insertkey(int k)               //insert new key/value/node
+    void decreaseKey(int i,int new_val)
+    void deletekey(int i)
+    void MinHeapify(int i)
+    void linearSearch(int val)
+    void printArray()
+    int height()
+}
+
+
+void insertKey(int k)
+{
+    1. if heap_size == capacity
+        1.1 print("Overflow : Heap Full")
+        1.2 return
+    2. heap_size++
+    3. i=heap_size - 1
+    4. harr[i] = k
+    5. while(i!=0 AND harr[parent(i)]>harr[i])
+       5.1 swap(harr[i],harr[parent(i)])
+       5.2 i = parent(i)  // return(i-1)/2
+}
+
+int parent(int i)
+{
+    return(i-2)/2
+}
+
+int extractMin()
+{
+    1. If heap_size <= 0 THEN -> return INT_MAX
+    2. If heap_size == 1 Then
+        2.1 heap_size--
+        2.2 return harr[0]
+    3. root = harr[0]
+    4. harr[0] = harr[heap_size-1]
+    5. heap_size--
+    6. MinHeapify(0)
+    7. return root
+}
+
+void MinHeapify(int i)
+{
+    1. l = left(i)
+    2. r = right(i)
+    3. smallest = i
+    4. if l<heap_size AND harr[i] < harr[i] THEN -> smallest = l
+    5. if r<heap_size AND harr[i] < harr[smallest] THEN -> smallest = r 
+    6. if smallest != i THEN ->
+        6.1 swap(harr[i],harr[smallest])
+        6.2 MinHeapify(smallest) 
+}
+
+void deleteKey(int i)
+{
+    1.decreaseKey(i,INT_MIN)
+    2.extractMin()
+}
+
+void decreaseKey(int i, int new_val)
+{
+    1. harr[i]=new_val;
+    2. WHILE(i!=0 AND harr[parent(i)]>harr[i])
+        2.1 swap(harr[i],harr[parent(i)])
+        2.2 i = parent(i)
+}
+
+int main()
+{
+    //take heap array size from user
+    //create array
+
+    //Present Heap Operation using menu diven program
+    //Perform Heap Operations
+}
+
+##########################################################################################
+
+Function Call Heirarchy :
+main()
+    extractMin() //root = 5
+        MinHeapify(0)

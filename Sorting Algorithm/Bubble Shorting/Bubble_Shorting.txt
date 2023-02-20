@@ -1,0 +1,53 @@
+Bubble Short Algorithm :
+Theory :
+
+-> Bubble sort is the simplest sorting Algorithm that works by represtedly swapping the adjacent elements if they are in wrong order.
+-> This algorithm is suitable for small data sets.
+-> It is known as bubble sort, because with wvwry complete itreation the largest element bubbles up towards the last place or the highest index just like a water bubble rises up to the water surface.
+
+-> Time Complexity : O(n^2)
+
+Working :
+
+1> Starting with the first elemt(index = 0), compare the current element with the next element of the array.
+2> If the current element is greater than then next element of the array, swap them.
+3> If the current element is less than the next element, move to the next element.
+4> Repeat (1>) till the list is sorted.
+
+Bubble Short Algorithm :
+
+a: array of items
+n: size of list
+
+Starting
+1. declare variables - i,j
+2. loop:(i=0 to i<n)
+    2.1. loop :(j = 0 to j , n -i -1)
+        2.1.1. if(a[j]>a[j+1])
+                2.1.1.1. swap(a[j], a[j+1])
+                end if
+            end loop
+        end loop
+    stop
+
+
+Optimized Bubble Short  :
+
+a: array of items
+n: size of list
+
+Starting
+1. declare variables - i,j
+2. loop:(i=0 to i<n)
+    2.1 flag = false
+    2.2 loop : (j = 0 to j < n-i-1)
+        2.2.2 if(a[j] > a[j+1])
+                2.2.2.1 flag = true
+                2.2.2.2 swap(a[j], a[j+1])
+                end if
+            end loop
+    2.3 if(flag == false) then break
+    end loop
+stop
+
+----> It is faster

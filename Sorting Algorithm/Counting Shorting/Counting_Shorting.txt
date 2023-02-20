@@ -1,0 +1,37 @@
+Counting Sort Algorithm :
+
+-> Counting Sort is a sorting Algorithm that sorts the elements of an array by counting the number of occurrences of each unique elements in the array.
+-> The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary . This mapping us done by performing arithmathic calculations on those counts to determune the positions of each key value(unique element) in the output sequence.
+-> It is often used as a subroutine in another sorting algorithm,radix sort,that can handle large keys more efficiently.
+-> It is NOT a comparion sort.
+
+-> Time Complexity : O(n+k)
+-> Space Complexity : O(n+k)
+
+Working:
+
+1> Take input array & range(no. of unique integer values involved)
+2> Create the output array of size same as input array.Create count array with size equal to the range & initialize values to 0;
+3> Count each element in the input array and place the count at the appropriate index of the count array.
+4> Modify the count array by adding the previous counts(cummulative). The modification count array indicates the position of each objects/elements in the output array.
+5> Output each object from the input array into the sorted output array followed by decreasing its count by 1.
+6> Print the sorted output array.
+
+Algorithm: 
+
+CountingShort()
+{
+    1.Take input_array[size]
+    2.Create output_array[size]
+    3.Take range (or no of unique elements)
+    4.for(int i=0 to i<range)
+        4.1 count_array[i] = 0
+    5.for(int i=0 to i<range)
+        5.1 ++count_array[input_array[i]]
+    6.for(int i=1 to i<range)
+        6.1 count_array[i] = count_array[i] + count_array[i-1]
+    7.for(int i=0 to i<size)
+        7.1 output_array[--count_array[input_array[i]]] = input_array[i]
+    8.for(i=0 to i<size)
+        8.1 input_array[i]=output_array[i]
+}

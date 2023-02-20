@@ -1,0 +1,22 @@
+Sorting Algorithms in Data Structure
+
+What is Shorting Algoriths ?
+ 
+ A shorting algorithm is used to rearrange a given array or list DS elements according to a particuar pattern( e.g. Ascending or Descending order).
+The comparison operator is used to decide the new order of element in respective data structure.
+
+Why do we need Sorting Algorithms ?
+ 
+ 1. Efficent soring is important for optimizing the effecency of other algorithms (such as search and mearge algorithms) which requires input datato be in sorted lists.
+ 2. Producing more human readable output.
+ 3. It is easier and faster to locate items in a sorted list and then unsorted.
+
+Types of Shorting Algorithm ?
+ 1. Selection shorting
+ 2. Bubble Shorting
+ 3. Insertion Sorting
+ 4. Merge Shorting
+ 5. Quick Sorting
+ 6. Heap Sorting
+ 7. Radix Shorting
+ 8. Bucket Shorting
