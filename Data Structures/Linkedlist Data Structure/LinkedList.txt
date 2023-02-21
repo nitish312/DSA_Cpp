@@ -1,0 +1,7 @@
+Operations of Linked List-
+1>Traversiong a linked list.
+2>Append a new node(to the end) of a list.
+3>Prepend a new node(to start) of list.
+4>Inserting a new node to a specific position in the list.
+5>Deleting a node from the list.
+6>Updating a node in the list.
