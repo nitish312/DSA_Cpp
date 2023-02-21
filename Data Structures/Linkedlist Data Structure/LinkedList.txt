@@ -1,7 +1,82 @@
-Operations of Linked List-
+Operations of Linked List-->
 1>Traversiong a linked list.
 2>Append a new node(to the end) of a list.
 3>Prepend a new node(to start) of list.
 4>Inserting a new node to a specific position in the list.
 5>Deleting a node from the list.
 6>Updating a node in the list.
+
+Creating a node-->
+class Node{
+    public:
+        int key;
+        int data;
+        Node* next;
+
+        Node()
+        {
+            key = 0;
+            data = 0;
+            next = NULL; 
+        }
+
+        Node(int k, int d)
+        {
+            key = k;
+            data = d;
+            next = NULL;
+        }
+};
+
+main-->
+int main()
+{
+    Node n1(1,10);
+    Node n2(2.20); 
+    Node n3();
+    Node n4();
+
+    CircularLinkedList c        <---CircularLinkedList is another class(like class Node),inside it we will have one data-member(head* ptr)type of this is node only(Node*head)
+    c.appendNode(&n1);
+    c.appendNode(&n2);
+    c.prependNode(&n3);
+    c.insertNodeAfter(1,&n4);
+    c.deleteNode(3);
+    c.updateNode(4,55);
+}
+------------------------------------------------
+Operation for Circular Linked List--
+>>Creating node-
+
+>>Append node algorithm/pseudo code--
+1. Get the new node.
+2. Check if node existes with same key
+    a. if true, abort
+    b. if false continue
+3a. if head == NULL then append at start
+3b. else traverse to the end of the list  (using pointer concept)
+4. append new node at the end
+
+>>Prepend node algorithm/pseudo code--
+1. Get the new node.
+2.Check if the node exists with same key
+        a.if true, abort
+        b.if false, continue
+3.Assign head value to a tamporary pointer - ptr
+4.Use ptr to traverse to end of the list
+5.Use ptr to access next pointer to this newly passed node
+6.point next pointer of n to head ptr
+7.change head ptr to n
+
+>>Insert node after alogorithm--
+1.Get the new node & the key of the node in the list after which you want to link this node.
+2.Check if the node exists with same key as new node.
+        a.if true, abort
+        b.if false, continue
+3.Check if node exists with the key entered by user
+        a.if false, abort
+        b.if true, continue
+4.access node N after which you want to append new node new_N
+        a.if node to be inserted at the end then 
+            new_node->next = head
+            Previous_node->next = new_node
